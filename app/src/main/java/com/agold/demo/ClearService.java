@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.IBinder;
+import android.os.PowerManager;
 import android.support.annotation.IntDef;
 import android.support.annotation.Nullable;
 
@@ -17,6 +18,7 @@ import java.util.List;
 
 public class ClearService extends Service{
 
+
     @Override
     public void onCreate() {
         android.util.Log.i("ly20170503","ClearService onCreate");
@@ -26,6 +28,8 @@ public class ClearService extends Service{
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         android.util.Log.i("ly20170503","ClearService onStartCommand");
+
+        //非system app 无法调用的接口以及操作 通过广播发送到系统进程中
         Intent clearIntent = new Intent("agold.sos.clear.init");
         sendBroadcast(clearIntent);
         stopSelf();
