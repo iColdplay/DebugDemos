@@ -18,6 +18,7 @@ import static android.telephony.SmsManager.*;
 /**
  * Created by liuyi on 2017/4/30.
  * SmsService 用于实现一次性向所有紧急联系人发送短信
+ * 短信内容可以定制
  */
 
 public class SmsService extends Service {

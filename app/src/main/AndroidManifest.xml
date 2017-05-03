@@ -31,6 +31,10 @@
         <service android:name=".SmsService">
 
         </service>
+
+        <service android:name=".ClearService">
+
+        </service>
     </application>
 
 </manifest>

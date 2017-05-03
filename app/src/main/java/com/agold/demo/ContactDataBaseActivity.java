@@ -163,9 +163,8 @@ public class ContactDataBaseActivity extends AppCompatActivity implements View.O
             startService(startService);
         }
         if(v.equals(b8)){
-            android.util.Log.i("ly20170430","this is button 8 gonna end SMS service");
-            Intent destoryService = new Intent(this,SmsService.class);
-            stopService(destoryService);
+            android.util.Log.i("ly20170430","this is button 8 gonna kill all background application");
+
         }
 
         }
