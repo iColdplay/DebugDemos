@@ -31,7 +31,7 @@ public class CallService extends Service {
     private Context mContext;
     private TelephonyManager telephonyManager;
     private PhoneStateListener mListener;
-    private int numberId = 0;
+    private static int numberId = 0;
     private static boolean fromOffHook = false;
     private static boolean fromIdle = false;
 
@@ -138,6 +138,9 @@ public class CallService extends Service {
             }
             startActivity(callIntent);
             numberId = numberId + 1;
+        }else{
+            //在这里 stopService 以便再次使用次service
+            stopSelf();
         }
     }
 
